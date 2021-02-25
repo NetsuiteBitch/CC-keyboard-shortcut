@@ -1,0 +1,9 @@
+original color:		#7957d5
+current main color:	#1534e6
+icon color:		#c55a11
+
+to be replaced in options.js file
+
+
+
+
