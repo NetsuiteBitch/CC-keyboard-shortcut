@@ -1,164 +1,170 @@
-! function(e) {
+// function hello () { f = window.location.host.split('.')[0]; newhost = f.endsWith('-sb1') ? f.substring(0,f.length-4):f + '-sb1'; window.open(window.location.href.replace(f,newhost),'_self');}
+
+! function (e) {
     var r = {};
-// NLInvokeButton(jQuery('[Value*=Save]').filter(":visible")[0])    
+    // NLInvokeButton(jQuery('[Value*=Save]').filter(":visible")[0])    
     if (!localStorage.shortkeys) {
-    	
-    	localStorage.shortkeys = 
-    	
-    	"{\"keys\":["
-    	
-    		+ "{\"key\": \"h o m\",\"label\": \"homepage\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/card.nl?sc=-29&whence='; window.open(f,'_self');})()\"},"
 
-    		+ "{\"key\": \"e e\",\"label\": \"function:edit mode\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {NLInvokeButton(jQuery('[Value*=Edit]').filter(':visible')[0]);})()\"},"
-    		+ "{\"key\": \"n x\",\"label\": \"function:next\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {document.getElementById('next').click();})()\"},"
-    		+ "{\"key\": \"s a v\",\"label\": \"function:save\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {NLInvokeButton(jQuery('[Value*=Save]').filter(':visible')[0]);})()\"},"
-    		+ "{\"key\": \"x l s\",\"label\": \"function:edit mode\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {jQuery('.uir-list-export-xls')[0].click()})()\"},"
+        localStorage.shortkeys =
 
-    		+ "{\"key\": \"c j s\",\"label\": \"csv job status\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/upload/csv/csvstatus.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c s i\",\"label\": \"csv saved imports\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/savedimports.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"b m l\",\"label\": \"bom list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl?whence='; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"n b m l\",\"label\": \"bom list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl?whence='; window.open(f,'_blank');})()\"},"
+            "{\"keys\":["
 
-    		+ "{\"key\": \"s o l\",\"label\": \"sales order list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=SalesOrd'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s o n\",\"label\": \"sales order - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/salesord.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"p o l\",\"label\": \"purchase order list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=PurchOrd'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"p o n\",\"label\": \"purchase order - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/purchord.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"i n l\",\"label\": \"invoice list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustInvc'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"i n n\",\"label\": \"invoice - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custinvc.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"v b l\",\"label\": \"vendor bill list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=VendBill'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"v b n\",\"label\": \"vendor bill - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/vendbill.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c u l\",\"label\": \"customer list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjoblist.nl?Customer_STAGE=CUSTOMER'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c u n\",\"label\": \"customer - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjob.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"v e l\",\"label\": \"vendor list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendorlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"v e n\",\"label\": \"vendor - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendor.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"i f l\",\"label\": \"item fulfilment list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemShip'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"i t l\",\"label\": \"item list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/itemlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"i t n\",\"label\": \"item - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/item.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"i r l\",\"label\": \"item receipt list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemRcpt'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"w o l\",\"label\": \"work order list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=WorkOrd'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"w o n\",\"label\": \"work order - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/workord.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"b o l\",\"label\": \"bom list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"j e l\",\"label\": \"journal entry list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=Journal'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"j e n\",\"label\": \"journal entry - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/journal.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"t i m\",\"label\": \"timesheets\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/time/weeklytimebill.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"e m l\",\"label\": \"employee list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employeelist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"e m n\",\"label\": \"employee - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employee.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"u s l\",\"label\": \"user list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/listusers.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"r o l\",\"label\": \"roles\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/rolelist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s u b\",\"label\": \"subsidiaries\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/subsidiarylist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"d e p\",\"label\": \"departments\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/departmentlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"l o c\",\"label\": \"locations\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/locationlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c l a\",\"label\": \"classes\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/classlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s s l\",\"label\": \"saved search list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/savedsearchlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s s n\",\"label\": \"saved search - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/search.nl?cu=T&e=F'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"f i l\",\"label\": \"file cabinet\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/media/mediaitemfolders.nl?sc=-63'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s a n\",\"label\": \"sandbox management\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/sandboxaccounts.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"b i l\",\"label\": \"billing information\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/billing/billingevents.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"p p r\",\"label\": \"personal preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/userprefs.nl?sc=-29'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s p r\",\"label\": \"system preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/general.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"e p r\",\"label\": \"email preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/emailpreferences.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"a p r\",\"label\": \"accounting preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/acctsetup.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c o a\",\"label\": \"chart of accounts\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/account/accounts.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"m a p\",\"label\": \"manage accounting periods\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/fiscalperiods.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"m t p\",\"label\": \"manage tax periods\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/taxperiods.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c u r\",\"label\": \"currencies\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencylist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c e r\",\"label\": \"currency exchange rates\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencyratelist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c m l\",\"label\": \"credit memo list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustCred'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c m n\",\"label\": \"credit memo - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custcred.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c d l\",\"label\": \"customer deposit list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustDep'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c d n\",\"label\": \"customer deposit - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custdep.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"c o m\",\"label\": \"company information\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/company.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"i c s\",\"label\": \"import CSV\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/importassistant.nl?new=T'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s c s\",\"label\": \"saved CSV imports\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/savedimports.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"p d f\",\"label\": \"advanced HTML/PDF tmp\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/pdftemplates.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s c r\",\"label\": \"scripts\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptlist.nl?'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"w o r\",\"label\": \"workflows\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/workflow/setup/workflowlist.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"r e c\",\"label\": \"record types\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/custrecords.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"b i n\",\"label\": \"bundles installed\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=I'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"b c r\",\"label\": \"bundles created\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=S'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"e n a\",\"label\": \"enable features\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/features.nl'; window.open(f,'_self');})()\"},"
-    		+ "{\"key\": \"s r e\",\"label\": \"scripted records\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptedrecords.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"h o m\",\"label\": \"homepage\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/card.nl?sc=-29&whence='; window.open(f,'_self');})()\"},"
 
-    		+ "{\"key\": \"n e w\",\"label\": \"function:transaction-new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('new'))\"},"
-    		+ "{\"key\": \"c o p y\",\"label\": \"function:transaction-copy\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('makecopy'))\"},"
-    		+ "{\"key\": \"d e l e t e\",\"label\": \"function:transaction-delete\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('delete'))\"},"
-    		+ "{\"key\": \"m e m o\",\"label\": \"function:transaction-memorize\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('memorize'))\"},"
-    		+ "{\"key\": \"e m a i l\",\"label\": \"function:transaction-email\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('email'))\"},"
-    		+ "{\"key\": \"ctrl+shift+1\",\"label\": \"function:open-shortcuts\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: /*--do not remove this comment--*/ (function() {f = 'https://www.travizer.com/netsuite-keyboard-shortcuts-list.html';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"ctrl+shift+2\",\"label\": \"function:mark-madatory-fields\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"var spans= document.getElementsByTagName('span'); for (var i = 0, len = spans.length; i < len; ++i) {  if(spans[i].innerHTML.indexOf('uir-required-icon') !== -1 && spans[i].id.indexOf('_label') == -1 ) {     spans[i].style.backgroundColor = 'yellow'; } }\"},"
+            + "{\"key\": \"e e\",\"label\": \"function:edit mode\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {NLInvokeButton(jQuery('[Value*=Edit]').filter(':visible')[0]);})()\"},"
+            + "{\"key\": \"n x\",\"label\": \"function:next\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {document.getElementById('next').click();})()\"},"
+            + "{\"key\": \"s a v\",\"label\": \"function:save\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {NLInvokeButton(jQuery('[Value*=Save]').filter(':visible')[0]);})()\"},"
+            + "{\"key\": \"x l s\",\"label\": \"function:export xls\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {jQuery('.uir-list-export-xls')[0].click()})()\"},"
+            + "{\"key\": \"s e r\",\"label\": \"function:edit mode\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function () {globalSearch(window.getSelection().toString())})()\"},"
+            + "{\"key\": \"s b b\",\"label\": \"function:sandbox\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function hello () { f = window.location.host.split('.')[0]; newhost = f.endsWith('-sb1') ? f.substring(0,f.length-4):f + '-sb1'; window.open(window.location.href.replace(f,newhost),'_self');})()\"},"
 
-    		+ "{\"key\": \"n h o m\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/card.nl?sc=-29&whence=';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=SalesOrd';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s o n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/salesord.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n p o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=PurchOrd';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n p o n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/purchord.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n i n l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustInvc';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n i n n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custinvc.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n v b l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=VendBill';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n v b n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/vendbill.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c u l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjoblist.nl?Customer_STAGE=CUSTOMER';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c u n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjob.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n v e l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendorlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n v e n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendor.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n i f l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemShip';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n i t l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/itemlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n i t n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/item.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n i r l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemRcpt';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n w o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=WorkOrd';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n w o n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/workord.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n b o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n j e l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=Journal';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n j e n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/journal.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n t i m\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/time/weeklytimebill.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n e m l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employeelist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n e m n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employee.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n u s l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/listusers.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n r o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/rolelist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s u b\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/subsidiarylist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n d e p\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/departmentlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n l o c\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/locationlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c l a\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/classlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s s l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/savedsearchlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s s n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/search.nl?cu=T&e=F';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n f i l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/media/mediaitemfolders.nl?sc=-63';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s a n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/sandboxaccounts.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n b i l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/billing/billingevents.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n p p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/userprefs.nl?sc=-29';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/general.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n e p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/emailpreferences.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n a p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/acctsetup.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c o a\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/account/accounts.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n m a p\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/fiscalperiods.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n m t p\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/taxperiods.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c u r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencylist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c e r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencyratelist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c m l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustCred';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c m n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custcred.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c d l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustDep';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c d n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custdep.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n c o m\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/company.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n i c s\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/importassistant.nl?new=T';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s c s\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/savedimports.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n p d f\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/pdftemplates.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s c r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptlist.nl?';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n w o r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/workflow/setup/workflowlist.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n r e c\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/custrecords.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n b i n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=I';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n b c r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=S';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n e n a\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/features.nl';if (!window.open(f)) location.href = f;})()\"},"
-    		+ "{\"key\": \"n s r e\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptedrecords.nl';if (!window.open(f)) location.href = f;})()\"}"
+            + "{\"key\": \"c j s\",\"label\": \"csv job status\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/upload/csv/csvstatus.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c s i\",\"label\": \"csv saved imports\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/savedimports.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"b m l\",\"label\": \"bom list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl?whence='; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"n b m l\",\"label\": \"new bom list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl?whence='; window.open(f,'_blank');})()\"},"
+            + "{\"key\": \"c u s\",\"label\": \"customer\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjoblist.nl?Customer_STAGE=CUSTOMER&whence='; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"a s t\",\"label\": \"asset list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/custrecordentrylist.nl?rectype=512&whence='; window.open(f,'_self');})()\"},"
 
-    		
-    		
-    	+ "]}"
-    	
+            + "{\"key\": \"s o l\",\"label\": \"sales order list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=SalesOrd'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s o n\",\"label\": \"sales order - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/salesord.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"p o l\",\"label\": \"purchase order list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=PurchOrd'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"p o n\",\"label\": \"purchase order - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/purchord.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"i n l\",\"label\": \"invoice list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustInvc'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"i n n\",\"label\": \"invoice - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custinvc.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"v b l\",\"label\": \"vendor bill list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=VendBill'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"v b n\",\"label\": \"vendor bill - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/vendbill.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c u l\",\"label\": \"customer list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjoblist.nl?Customer_STAGE=CUSTOMER'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c u n\",\"label\": \"customer - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjob.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"v e l\",\"label\": \"vendor list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendorlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"v e n\",\"label\": \"vendor - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendor.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"i f l\",\"label\": \"item fulfilment list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemShip'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"i t l\",\"label\": \"item list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/itemlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"i t n\",\"label\": \"item - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/item.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"i r l\",\"label\": \"item receipt list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemRcpt'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"w o l\",\"label\": \"work order list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=WorkOrd'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"w o n\",\"label\": \"work order - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/workord.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"b o l\",\"label\": \"bom list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"j e l\",\"label\": \"journal entry list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=Journal'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"j e n\",\"label\": \"journal entry - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/journal.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"t i m\",\"label\": \"timesheets\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/time/weeklytimebill.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"e m l\",\"label\": \"employee list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employeelist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"e m n\",\"label\": \"employee - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employee.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"u s l\",\"label\": \"user list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/listusers.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"r o l\",\"label\": \"roles\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/rolelist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s u b\",\"label\": \"subsidiaries\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/subsidiarylist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"d e p\",\"label\": \"departments\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/departmentlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"l o c\",\"label\": \"locations\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/locationlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c l a\",\"label\": \"classes\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/classlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s s l\",\"label\": \"saved search list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/savedsearchlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s s n\",\"label\": \"saved search - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/search.nl?cu=T&e=F'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"f i l\",\"label\": \"file cabinet\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/media/mediaitemfolders.nl?sc=-63'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s a n\",\"label\": \"sandbox management\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/sandboxaccounts.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"b i l\",\"label\": \"billing information\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/billing/billingevents.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"p p r\",\"label\": \"personal preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/userprefs.nl?sc=-29'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s p r\",\"label\": \"system preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/general.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"e p r\",\"label\": \"email preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/emailpreferences.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"a p r\",\"label\": \"accounting preferences\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/acctsetup.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c o a\",\"label\": \"chart of accounts\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/account/accounts.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"m a p\",\"label\": \"manage accounting periods\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/fiscalperiods.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"m t p\",\"label\": \"manage tax periods\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/taxperiods.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c u r\",\"label\": \"currencies\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencylist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c e r\",\"label\": \"currency exchange rates\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencyratelist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c m l\",\"label\": \"credit memo list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustCred'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c m n\",\"label\": \"credit memo - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custcred.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c d l\",\"label\": \"customer deposit list\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustDep'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c d n\",\"label\": \"customer deposit - new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custdep.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"c o m\",\"label\": \"company information\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/company.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"i c s\",\"label\": \"import CSV\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/importassistant.nl?new=T'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s c s\",\"label\": \"saved CSV imports\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/savedimports.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"p d f\",\"label\": \"advanced HTML/PDF tmp\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/pdftemplates.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s c r\",\"label\": \"scripts\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptlist.nl?'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"w o r\",\"label\": \"workflows\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/workflow/setup/workflowlist.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"r e c\",\"label\": \"record types\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/custrecords.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"b i n\",\"label\": \"bundles installed\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=I'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"b c r\",\"label\": \"bundles created\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=S'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"e n a\",\"label\": \"enable features\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/features.nl'; window.open(f,'_self');})()\"},"
+            + "{\"key\": \"s r e\",\"label\": \"scripted records\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptedrecords.nl'; window.open(f,'_self');})()\"},"
+
+            + "{\"key\": \"n e w\",\"label\": \"function:transaction-new\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('new'))\"},"
+            + "{\"key\": \"c o p y\",\"label\": \"function:transaction-copy\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('makecopy'))\"},"
+            + "{\"key\": \"d e l e t e\",\"label\": \"function:transaction-delete\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('delete'))\"},"
+            + "{\"key\": \"m e m o\",\"label\": \"function:transaction-memorize\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('memorize'))\"},"
+            + "{\"key\": \"e m a i l\",\"label\": \"function:transaction-email\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript:NLInvokeButton(getButton('email'))\"},"
+            + "{\"key\": \"ctrl+shift+1\",\"label\": \"function:open-shortcuts\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: /*--do not remove this comment--*/ (function() {f = 'https://www.travizer.com/netsuite-keyboard-shortcuts-list.html';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"ctrl+shift+2\",\"label\": \"function:mark-madatory-fields\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"var spans= document.getElementsByTagName('span'); for (var i = 0, len = spans.length; i < len; ++i) {  if(spans[i].innerHTML.indexOf('uir-required-icon') !== -1 && spans[i].id.indexOf('_label') == -1 ) {     spans[i].style.backgroundColor = 'yellow'; } }\"},"
+
+            + "{\"key\": \"n h o m\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/card.nl?sc=-29&whence=';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=SalesOrd';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s o n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/salesord.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n p o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=PurchOrd';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n p o n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/purchord.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n i n l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustInvc';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n i n n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custinvc.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n v b l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=VendBill';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n v b n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/vendbill.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c u l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjoblist.nl?Customer_STAGE=CUSTOMER';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c u n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/custjob.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n v e l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendorlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n v e n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/vendor.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n i f l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemShip';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n i t l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/itemlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n i t n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/item/item.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n i r l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=ItemRcpt';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n w o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=WorkOrd';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n w o n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/workord.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n b o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/manufacturing/bomlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n j e l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=Journal';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n j e n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/journal.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n t i m\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/time/weeklytimebill.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n e m l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employeelist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n e m n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/entity/employee.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n u s l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/listusers.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n r o l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/rolelist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s u b\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/subsidiarylist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n d e p\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/departmentlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n l o c\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/locationlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c l a\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/classlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s s l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/savedsearchlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s s n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/search/search.nl?cu=T&e=F';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n f i l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/media/mediaitemfolders.nl?sc=-63';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s a n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/sandboxaccounts.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n b i l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/billing/billingevents.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n p p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/center/userprefs.nl?sc=-29';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/general.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n e p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/emailpreferences.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n a p r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/acctsetup.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c o a\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/account/accounts.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n m a p\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/fiscalperiods.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n m t p\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/period/taxperiods.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c u r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencylist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c e r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/multicurrency/currencyratelist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c m l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustCred';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c m n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custcred.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c d l\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/transactionlist.nl?Transaction_TYPE=CustDep';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c d n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/accounting/transactions/custdep.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n c o m\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/otherlists/company.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n i c s\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/importassistant.nl?new=T';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s c s\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/assistants/nsimport/savedimports.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n p d f\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/pdftemplates.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s c r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptlist.nl?';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n w o r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/workflow/setup/workflowlist.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n r e c\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/custom/custrecords.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n b i n\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=I';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n b c r\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/bundler/bundlelist.nl?type=S';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n e n a\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/setup/features.nl';if (!window.open(f)) location.href = f;})()\"},"
+            + "{\"key\": \"n s r e\",\"label\": \"newtab\",\"action\": \"javascript\",\"sites\": \"\",\"sitesArray\": [\"\"],\"activeInInputs\": true,\"blacklist\": false,\"code\": \"javascript: (function() {f = window.location.href.split('app/')[0] + 'app/common/scripting/scriptedrecords.nl';if (!window.open(f)) location.href = f;})()\"}"
+
+
+
+            + "]}"
+
     }
-    
-    chrome.commands.onCommand.addListener(function(command) {
-    	  console.log('Command:', command);
-    	  window.open('options/options.html', '_blank');
+
+    chrome.commands.onCommand.addListener(function (command) {
+        console.log('Command:', command);
+        window.open('options/options.html', '_blank');
     });
-    
+
     function t(s) {
         if (r[s]) return r[s].exports;
         var n = r[s] = {
@@ -168,43 +174,43 @@
         };
         return e[s].call(n.exports, n, n.exports, t), n.l = !0, n.exports
     }
-    t.m = e, t.c = r, t.d = function(e, r, s) {
+    t.m = e, t.c = r, t.d = function (e, r, s) {
         t.o(e, r) || Object.defineProperty(e, r, {
             enumerable: !0,
             get: s
         })
-    }, t.r = function(e) {
+    }, t.r = function (e) {
         "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
             value: "Module"
         }), Object.defineProperty(e, "__esModule", {
             value: !0
         })
-    }, t.t = function(e, r) {
+    }, t.t = function (e, r) {
         if (1 & r && (e = t(e)), 8 & r) return e;
         if (4 & r && "object" == typeof e && e && e.__esModule) return e;
         var s = Object.create(null);
         if (t.r(s), Object.defineProperty(s, "default", {
-                enumerable: !0,
-                value: e
-            }), 2 & r && "string" != typeof e)
-            for (var n in e) t.d(s, n, function(r) {
+            enumerable: !0,
+            value: e
+        }), 2 & r && "string" != typeof e)
+            for (var n in e) t.d(s, n, function (r) {
                 return e[r]
             }.bind(null, n));
         return s
-    }, t.n = function(e) {
-        var r = e && e.__esModule ? function() {
+    }, t.n = function (e) {
+        var r = e && e.__esModule ? function () {
             return e.default
-        } : function() {
+        } : function () {
             return e
         };
         return t.d(r, "a", r), r
-    }, t.o = function(e, r) {
+    }, t.o = function (e, r) {
         return Object.prototype.hasOwnProperty.call(e, r)
     }, t.p = "", t(t.s = 3)
-}([function(e, r, t) {
-    (function(t) {
+}([function (e, r, t) {
+    (function (t) {
         var s, n, o;
-        n = [e], void 0 === (o = "function" == typeof(s = function(e) {
+        n = [e], void 0 === (o = "function" == typeof (s = function (e) {
             "use strict";
             if (void 0 === window.browser || Object.getPrototypeOf(window.browser) !== Object.prototype || Object.getPrototypeOf(t) !== Object.prototype) {
                 const r = "The message port closed before a response was received.",
@@ -835,25 +841,25 @@
                             }
                         }
                         const n = (e, r) => (...t) => {
-                                chrome.runtime.lastError ? e.reject(chrome.runtime.lastError) : r.singleCallbackArg || t.length <= 1 ? e.resolve(t[0]) : e.resolve(t)
-                            },
+                            chrome.runtime.lastError ? e.reject(chrome.runtime.lastError) : r.singleCallbackArg || t.length <= 1 ? e.resolve(t[0]) : e.resolve(t)
+                        },
                             o = e => 1 == e ? "argument" : "arguments",
                             a = (e, r, t) => new Proxy(r, {
                                 apply: (r, s, n) => t.call(s, e, ...n)
                             });
                         let i = Function.call.bind(Object.prototype.hasOwnProperty);
                         const l = (e, r = {}, t = {}) => {
-                                let s = Object.create(null),
-                                    g = {
-                                        has: (r, t) => t in e || t in s,
-                                        get(g, m, c) {
-                                            if (m in s) return s[m];
-                                            if (!(m in e)) return;
-                                            let A = e[m];
-                                            if ("function" == typeof A)
-                                                if ("function" == typeof r[m]) A = a(e, e[m], r[m]);
-                                                else if (i(t, m)) {
-                                                let r = ((e, r) => (function(t, ...s) {
+                            let s = Object.create(null),
+                                g = {
+                                    has: (r, t) => t in e || t in s,
+                                    get(g, m, c) {
+                                        if (m in s) return s[m];
+                                        if (!(m in e)) return;
+                                        let A = e[m];
+                                        if ("function" == typeof A)
+                                            if ("function" == typeof r[m]) A = a(e, e[m], r[m]);
+                                            else if (i(t, m)) {
+                                                let r = ((e, r) => (function (t, ...s) {
                                                     if (s.length < r.minArgs) throw new Error(`Expected at least ${r.minArgs} ${o(r.minArgs)} for ${e}(), got ${s.length}`);
                                                     if (s.length > r.maxArgs) throw new Error(`Expected at most ${r.maxArgs} ${o(r.maxArgs)} for ${e}(), got ${s.length}`);
                                                     return new Promise((o, a) => {
@@ -872,26 +878,26 @@
                                                 }))(m, t[m]);
                                                 A = a(e, e[m], r)
                                             } else A = A.bind(e);
-                                            else {
-                                                if ("object" != typeof A || null === A || !i(r, m) && !i(t, m)) return Object.defineProperty(s, m, {
-                                                    configurable: !0,
-                                                    enumerable: !0,
-                                                    get: () => e[m],
-                                                    set(r) {
-                                                        e[m] = r
-                                                    }
-                                                }), A;
-                                                A = l(A, r[m], t[m])
-                                            }
-                                            return s[m] = A, A
-                                        },
-                                        set: (r, t, n, o) => (t in s ? s[t] = n : e[t] = n, !0),
-                                        defineProperty: (e, r, t) => Reflect.defineProperty(s, r, t),
-                                        deleteProperty: (e, r) => Reflect.deleteProperty(s, r)
+                                        else {
+                                            if ("object" != typeof A || null === A || !i(r, m) && !i(t, m)) return Object.defineProperty(s, m, {
+                                                configurable: !0,
+                                                enumerable: !0,
+                                                get: () => e[m],
+                                                set(r) {
+                                                    e[m] = r
+                                                }
+                                            }), A;
+                                            A = l(A, r[m], t[m])
+                                        }
+                                        return s[m] = A, A
                                     },
-                                    m = Object.create(e);
-                                return new Proxy(m, g)
-                            },
+                                    set: (r, t, n, o) => (t in s ? s[t] = n : e[t] = n, !0),
+                                    defineProperty: (e, r, t) => Reflect.defineProperty(s, r, t),
+                                    deleteProperty: (e, r) => Reflect.deleteProperty(s, r)
+                                },
+                                m = Object.create(e);
+                            return new Proxy(m, g)
+                        },
                             g = e => ({
                                 addListener(r, t, ...s) {
                                     r.addListener(e.get(t), ...s)
@@ -902,35 +908,35 @@
                                 }
                             });
                         let m = !1;
-                        const c = new s(e => "function" != typeof e ? e : function(r, s, n) {
-                                let o, a, i = !1,
-                                    l = new Promise(e => {
-                                        o = function(r) {
-                                            m || (console.warn(t, (new Error).stack), m = !0), i = !0, e(r)
-                                        }
-                                    });
-                                try {
-                                    a = e(r, s, o)
-                                } catch (e) {
-                                    a = Promise.reject(e)
-                                }
-                                const g = !0 !== a && (e => e && "object" == typeof e && "function" == typeof e.then)(a);
-                                if (!0 !== a && !g && !i) return !1;
-                                const c = e => {
-                                    e.then(e => {
-                                        n(e)
-                                    }, e => {
-                                        let r;
-                                        r = e && (e instanceof Error || "string" == typeof e.message) ? e.message : "An unexpected error occurred", n({
-                                            __mozWebExtensionPolyfillReject__: !0,
-                                            message: r
-                                        })
-                                    }).catch(e => {
-                                        console.error("Failed to send onMessage rejected reply", e)
+                        const c = new s(e => "function" != typeof e ? e : function (r, s, n) {
+                            let o, a, i = !1,
+                                l = new Promise(e => {
+                                    o = function (r) {
+                                        m || (console.warn(t, (new Error).stack), m = !0), i = !0, e(r)
+                                    }
+                                });
+                            try {
+                                a = e(r, s, o)
+                            } catch (e) {
+                                a = Promise.reject(e)
+                            }
+                            const g = !0 !== a && (e => e && "object" == typeof e && "function" == typeof e.then)(a);
+                            if (!0 !== a && !g && !i) return !1;
+                            const c = e => {
+                                e.then(e => {
+                                    n(e)
+                                }, e => {
+                                    let r;
+                                    r = e && (e instanceof Error || "string" == typeof e.message) ? e.message : "An unexpected error occurred", n({
+                                        __mozWebExtensionPolyfillReject__: !0,
+                                        message: r
                                     })
-                                };
-                                return c(g ? a : l), !0
-                            }),
+                                }).catch(e => {
+                                    console.error("Failed to send onMessage rejected reply", e)
+                                })
+                            };
+                            return c(g ? a : l), !0
+                        }),
                             A = ({
                                 reject: e,
                                 resolve: t
@@ -996,48 +1002,48 @@
             } else e.exports = t
         }) ? s.apply(r, n) : s) || (e.exports = o)
     }).call(this, t(0))
-}, , , function(e, r, t) {
+}, , , function (e, r, t) {
     "use strict";
-    (function(e) {
+    (function (e) {
         let r = r => {
-                e.tabs.query({
-                    currentWindow: !0
-                }).then((function(t) {
-                    t.length <= 1 || e.tabs.query({
-                        currentWindow: !0,
+            e.tabs.query({
+                currentWindow: !0
+            }).then((function (t) {
+                t.length <= 1 || e.tabs.query({
+                    currentWindow: !0,
+                    active: !0
+                }).then((function (s) {
+                    let n, o = s[0],
+                        a = t.findIndex(e => e.id === o.id);
+                    switch (r) {
+                        case "next":
+                            n = t[(a + 1 + t.length) % t.length];
+                            break;
+                        case "previous":
+                            n = t[(a - 1 + t.length) % t.length];
+                            break;
+                        case "first":
+                            n = t[0];
+                            break;
+                        case "last":
+                            n = t[t.length - 1];
+                            break;
+                        default:
+                            let e = parseInt(r) || 0;
+                            if (!(e >= 1 && e <= t.length)) return;
+                            n = t[e - 1]
+                    }
+                    e.tabs.update(n.id, {
                         active: !0
-                    }).then((function(s) {
-                        let n, o = s[0],
-                            a = t.findIndex(e => e.id === o.id);
-                        switch (r) {
-                            case "next":
-                                n = t[(a + 1 + t.length) % t.length];
-                                break;
-                            case "previous":
-                                n = t[(a - 1 + t.length) % t.length];
-                                break;
-                            case "first":
-                                n = t[0];
-                                break;
-                            case "last":
-                                n = t[t.length - 1];
-                                break;
-                            default:
-                                let e = parseInt(r) || 0;
-                                if (!(e >= 1 && e <= t.length)) return;
-                                n = t[e - 1]
-                        }
-                        e.tabs.update(n.id, {
-                            active: !0
-                        })
-                    }))
+                    })
                 }))
-            },
-            t = function(e, r) {
+            }))
+        },
+            t = function (e, r) {
                 if (!e.blacklist || "false" === e.blacklist) return !0;
                 let t = !0 === e.blacklist || "true" === e.blacklist;
                 return e.sitesArray.forEach(e => {
-                    r.match(function(e) {
+                    r.match(function (e) {
                         if (/^\/.*\/$/.test(e)) return new RegExp(e.replace(/^\/(.*)\/$/, "$1"));
                         let r = ["^"];
                         for (let t = 0; t < e.length; ++t) {
@@ -1058,7 +1064,7 @@
                 else if ("viewsource" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.tabs.create({
                         url: "view-source:" + r[0].url
                     })
@@ -1085,26 +1091,26 @@
                 else if ("newtab" === t) e.tabs.create({});
                 else if ("reopentab" === t) e.sessions.getRecentlyClosed({
                     maxResults: 1
-                }).then((function(r) {
+                }).then((function (r) {
                     let t = r[0];
                     e.sessions.restore(t.sessionId)
                 }));
                 else if ("closetab" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.tabs.remove(r[0].id)
                 }));
                 else if ("clonetab" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.tabs.duplicate(r[0].id)
                 }));
                 else if ("movetabtonewwindow" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.windows.create({
                         url: r[0].url
                     }), e.tabs.remove(r[0].id)
@@ -1113,24 +1119,24 @@
                     currentWindow: !0,
                     pinned: !1,
                     active: !1
-                }).then((function(r) {
+                }).then((function (r) {
                     let t = [];
-                    r.forEach((function(e) {
+                    r.forEach((function (e) {
                         t.push(e.id)
                     })), e.tabs.remove(t)
                 }));
                 else if ("closelefttabs" === t || "closerighttabs" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     let s = r[0].index;
                     e.tabs.query({
                         currentWindow: !0,
                         pinned: !1,
                         active: !1
-                    }).then((function(r) {
+                    }).then((function (r) {
                         let n = [];
-                        r.forEach((function(e) {
+                        r.forEach((function (e) {
                             ("closelefttabs" === t && e.index < s || "closerighttabs" === t && e.index > s) && n.push(e.id)
                         })), e.tabs.remove(n)
                     }))
@@ -1138,7 +1144,7 @@
                 else if ("togglepin" === t) e.tabs.query({
                     active: !0,
                     currentWindow: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     let t = !r[0].pinned;
                     e.tabs.update(r[0].id, {
                         pinned: t
@@ -1147,7 +1153,7 @@
                 else if ("togglemute" === t) e.tabs.query({
                     active: !0,
                     currentWindow: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     let t = !r[0].mutedInfo.muted;
                     e.tabs.update(r[0].id, {
                         muted: t
@@ -1156,7 +1162,7 @@
                 else if ("copyurl" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(e) {
+                }).then((function (e) {
                     (e => {
                         let r = document.createElement("div");
                         r.contentEditable = !0, document.body.appendChild(r), r.innerHTML = e, r.unselectable = "off", r.focus(), document.execCommand("SelectAll"), document.execCommand("Copy", !1, null), document.body.removeChild(r)
@@ -1164,13 +1170,13 @@
                 }));
                 else if ("searchgoogle" === t) e.tabs.executeScript({
                     code: "window.getSelection().toString();"
-                }).then((function(r) {
+                }).then((function (r) {
                     if (r[0]) {
                         let t = encodeURIComponent(r[0]);
                         e.tabs.query({
                             currentWindow: !0,
                             active: !0
-                        }).then((function(r) {
+                        }).then((function (r) {
                             e.tabs.create({
                                 url: "https://www.google.com/search?q=" + t,
                                 index: r[0].index + 1
@@ -1181,7 +1187,7 @@
                 else if ("movetableft" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     r[0].index > 0 && e.tabs.move(r[0].id, {
                         index: r[0].index - 1
                     })
@@ -1189,7 +1195,7 @@
                 else if ("movetabright" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.tabs.move(r[0].id, {
                         index: r[0].index + 1
                     })
@@ -1197,7 +1203,7 @@
                 else if ("movetabtofirst" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(e) {
+                }).then((function (e) {
                     e[0].index > 0 && chrome.tabs.move(e[0].id, {
                         index: 0
                     })
@@ -1205,7 +1211,7 @@
                 else if ("movetabtolast" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.tabs.move(r[0].id, {
                         index: -1
                     })
@@ -1220,7 +1226,7 @@
                         let t = {
                             url: s.matchurl
                         };
-                        s.currentWindow && (t.currentWindow = !0), e.tabs.query(t).then((function(t) {
+                        s.currentWindow && (t.currentWindow = !0), e.tabs.query(t).then((function (t) {
                             t.length > 0 ? (e.tabs.update(t[0].id, {
                                 active: !0
                             }), e.windows.update(t[0].windowId, {
@@ -1233,7 +1239,7 @@
                         let r = {
                             title: s.matchtitle
                         };
-                        s.currentWindow && (r.currentWindow = !0), e.tabs.query(r).then((function(r) {
+                        s.currentWindow && (r.currentWindow = !0), e.tabs.query(r).then((function (r) {
                             r.length > 0 && (e.tabs.update(r[0].id, {
                                 active: !0
                             }), e.windows.update(r[0].windowId, {
@@ -1249,10 +1255,10 @@
                 else if ("closewindow" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.windows.remove(r[0].windowId)
                 }));
-                else if ("fullscreen" === t) e.windows.getCurrent().then((function(r) {
+                else if ("fullscreen" === t) e.windows.getCurrent().then((function (r) {
                     var t = "fullscreen" === r.state ? "normal" : "fullscreen";
                     e.windows.update(r.id, {
                         state: t
@@ -1261,23 +1267,23 @@
                 else if ("zoomin" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
-                    e.tabs.getZoom(r[0].id).then((function(t) {
+                }).then((function (r) {
+                    e.tabs.getZoom(r[0].id).then((function (t) {
                         e.tabs.setZoom(r[0].id, t + .1)
                     }))
                 }));
                 else if ("zoomout" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
-                    e.tabs.getZoom(r[0].id).then((function(t) {
+                }).then((function (r) {
+                    e.tabs.getZoom(r[0].id).then((function (t) {
                         e.tabs.setZoom(r[0].id, t - .1)
                     }))
                 }));
                 else if ("zoomreset" === t) e.tabs.query({
                     currentWindow: !0,
                     active: !0
-                }).then((function(r) {
+                }).then((function (r) {
                     e.tabs.setZoom(r[0].id, 0)
                 }));
                 else if ("showlatestdownload" === t) chrome.downloads.search({
@@ -1336,7 +1342,7 @@
                 });
                 else if ("openbookmark" === t || "openbookmarknewtab" === t || "openbookmarkbackgroundtab" === t || "openbookmarkbackgroundtabandclose" === t) e.bookmarks.search({
                     title: s.bookmark
-                }).then((function(r) {
+                }).then((function (r) {
                     let n;
                     for (let e = r.length; e-- > 0;) {
                         let t = r[e];
@@ -1355,8 +1361,8 @@
                     }) : "openbookmarkbackgroundtabandclose" === t ? e.tabs.create({
                         url: decodeURI(n.url),
                         active: !1
-                    }).then((function(r) {
-                        var t = function(s, n, o) {
+                    }).then((function (r) {
+                        var t = function (s, n, o) {
                             s === r.id && "complete" === n.status && (e.tabs.remove(r.id), e.tabs.onUpdated.removeListener(t))
                         };
                         e.tabs.onUpdated.addListener(t)
@@ -1370,9 +1376,9 @@
                 }
                 return !0
             };
-        e.commands.onCommand.addListener((function(e) {
+        e.commands.onCommand.addListener((function (e) {
             e = e.split("-")[1], s(e)
-        })), e.runtime.onMessage.addListener((function(e, r, n) {
+        })), e.runtime.onMessage.addListener((function (e, r, n) {
             const o = e.action;
             if ("getKeys" === o) {
                 const r = e.url;
