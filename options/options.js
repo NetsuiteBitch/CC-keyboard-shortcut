@@ -15207,9 +15207,9 @@
 	            	            							
 		            	            					"b-button", {	//=== BUTTON SAVE SHORTCUTS
 		            	            					
-							            	                on: {
-							            	                    	click: n.saveShortcuts
-							            	                	}
+							            	                // on: {
+							            	                //     	click: n.saveShortcuts
+							            	                // 	}
 			            	            				
 		            	            					}, [
 		            	            						
